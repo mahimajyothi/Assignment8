@@ -1,0 +1,63 @@
+//first create Employee class after that create another class sortdemo 
+public class Employee implements Comparable<Employee>{
+	private String name;
+	private int id;
+	public Employee(String name,int id) {
+		this.name = name;
+		this.id = id;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	@Override
+	public int compareTo(Employee o) {
+			return this.id - o.id;
+	}
+	public String toString() {
+		return "Employee: "+ id +" - "+ name +"\n";
+	}
+	
+}
+
+//class Sortdemo 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+public class SortDemo {
+
+	public static void main(String[] args) {
+		List<Employee> e = new ArrayList<Employee>();
+		e.add(new Employee("Tom",45));
+		e.add(new Employee("Peter",34));
+		e.add(new Employee("Jhon",89));
+		e.add(new Employee("Mary",23));
+		e.add(new Employee("Daisy",31));
+		e.add(new Employee("Jack",65));
+		e.add(new Employee("Raju",76));
+		e.add(new Employee("Siva",37));
+		e.add(new Employee("Lahari",42));
+		e.add(new Employee("Suresh",79));
+		e.add(new Employee("Ravi",15));
+		e.add(new Employee("Balu",9));
+		e.add(new Employee("Kavya",18));
+		e.add(new Employee("Siri",25));
+		e.add(new Employee("Sonu",36));
+		e.add(new Employee("Dheeraj",28));
+		e.add(new Employee("Mahi",10));
+		e.add(new Employee("Manu",91));
+		e.add(new Employee("Seetha",57));
+		e.add(new Employee("Ramu",48));
+		Collections.sort(e);
+       System.out.println(e);
+	}
+
+}
